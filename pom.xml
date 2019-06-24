@@ -8,7 +8,7 @@
 	<description>Teaching Academy Application - Parent Module</description>
 	<organization>
 		<name>denOfProgramming</name>
-		<url>denofprogramming.com</url>
+		<url>denofprogramming1.com</url>
 	</organization>
 	<developers>
 		<developer>
@@ -75,9 +75,17 @@
 		<snapshotRepository>
 			<id>nexus-snapshots</id>
 			<url>http://localhost:8081/nexus/content/repositories/snapshots/</url>			
-		</snapshotRepository>		
+		</snapshotRepository>	
+		<repository>
+			<id>nexus-releases</id>
+			<url>http://localhost:8081/nexus/content/repositories/releases/</url>
+		</repository>
 	</distributionManagement>
-
+	<scm>
+		<connection>scm:git@github.com:susinha/teaching-academy.git</connection>
+		<developerConnection>scm:git@github.com:susinha/teaching-academy.git</developerConnection>
+		<url>scm:git@github.com:susinha/teaching-academy.git</url>	
+	</scm>
 	<build>
 		<pluginManagement>
 			<plugins>
@@ -109,6 +117,15 @@
 							<version>2.6</version>
 						</dependency>
 					</dependencies>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+					<configuration>
+						<tagNameFormat>v@{project.version}</tagNameFormat>
+						<autoVersionSubModules>true</autoVersionSubModules>
+					</configuration>
 				</plugin>
 			</plugins>
 		</pluginManagement>
