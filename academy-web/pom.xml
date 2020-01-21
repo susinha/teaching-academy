@@ -9,7 +9,7 @@
 	<packaging>war</packaging>
 	<name>AcademyWebApp</name>
 	<description>Teaching Academy Web Application</description>
-
+<!-- hello world -->
 	<build>
 		<plugins>
 			<plugin>
